@@ -78,8 +78,8 @@ let template=''
     cart.forEach(item => {
     template += `
     <div>(${item.name} - ${item.quantity})
-    <button onclick="removeItem('${item.name}')"
-    class= "btn btn-danger"> <i class ="mdi mdi-delete"</i> </button></div>`
+    <button onclick= "removeItem('${item.name}')"
+    class= "btn btn-danger"> <i class = "mdi mdi-delete"</i> </button></div>`
 })
 let total = calculateCartTotal()
 cartElem.innerHTML = template
