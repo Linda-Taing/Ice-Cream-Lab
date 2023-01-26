@@ -30,8 +30,95 @@ let shop = [{
     image: 'http://images.wbmason.com/350/L_JOY66050.jpg',
     price: 4
 }]
+function drawShop(){
+    let shopElem = document.getElementById('product-cards')
+    let template = ''
 
-function addItemToCart(name){
-let itemToAdd = shop.find(p=> p.name == name)
-console.log(itemToAdd)
+    shop.forEach(product => {
+        template += `
+        <div class="col-md-6 col-lg-4 my-3">
+        <div class="card product-card">
+            <img src="${product.image}"alt"${product.name}"
+                alt="${shop.name}">
+            <div class="card-body">
+                <div class="d-flex align-items-center justify-content-between">
+                    <p><b>${product.name}</b></p>
+                    <p>$${product.price}</p>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button class="btn btn-secondary " title="Add item to cone!"
+                        onclick="addItemToCart(${product.name})">
+                        <i class="mdi mdi-cart "></i>ADD</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>`
+        
+      shopElem.innerHTML = template    
+
+console.log('drawShop')
+    })
+
+}   
+
+function drawCart(){
+
+let cartElem = document.getElementById('cart')
+
+    cart.forEach(item => {
+    template += `
+    <div>${item.name} - ${item.quantity}
+    <button onclick="removeItem('${item.name}')"
+    class= "btn btn-danger"> <iclass ="mdi mdi-delete"</i> </button><d/iv>`
+})
+
+
+
 }
+function addItemToCart(name){
+
+let itemToAdd = shop.find(p=> p.name == name)
+
+let flavorsFoundInCart = cart.find(p => p.name == name)
+
+if(flavorsFoundInCart){
+    flavorsFoundInCart.quantity++
+} else {
+    cart.push({
+        name: itemToAdd.name,
+        price:itemToAdd.price,
+        quantity:1
+    })
+    }
+    drawCart()
+}
+
+function calculateCartTotal() {
+
+let total = 0
+cart.forEach(p => {
+total += p.price + p.quantity
+})
+
+return total
+}
+function checkout() {
+    cart =[]
+    drawCart()
+}
+
+
+function removeItem(name){
+
+    let index = cart.findndex(p => p.name == name)
+    cart.splice(index, 1)
+    drawCart()
+
+}
+
+
+
+drawShop()
