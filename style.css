@@ -1,19 +1,30 @@
-body{
-    display: flex;  
-/* //when removed will make this a 3 column webpage. */
-    flex-direction:column; 
-    height: 100vh;
-}
-.checkout{
-    min-height: calc(100vh-100);
-}
-.img{
-    height:20vh;
-    width:100%
+main{
+    display:flex;
+    flex-direction:column;
+    max-height: 100vh;
+
 }
 
-.header-font{
-    font-family: 'Source Code Pro', monospace;
-    color:rgb(239, 118, 189)
+
+
+.checkout-bg{
+    background-color: black;
+    background-size: cover;
+    min-height: calc(100vh - 221px);
 }
+
+h3{
+    color:blueviolet;
+}
+
+
+
+
+
+.title{
+    font-family: 'Source Code Pro', monospace;
+    font-size: 30px;
+    color:rgb(77, 52, 88)
+}
+
 
