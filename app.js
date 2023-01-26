@@ -1,4 +1,4 @@
-const Options = [{
+const Option = [{
     name: 'Cookie Dough',
     image: 'https://celebratingsweets.com/wp-content/uploads/2014/04/Cookie-Dough-Ice-Cream-1-5.jpg',
     price: 1
@@ -35,22 +35,33 @@ const Options = [{
 }]
 
 
-let option = []
+let cart = []
 
 //SECTION: DrawFunctions
 
 
-function drawIceCream()
+function drawOption(){
 
-let iceCreamElem = document.getElementById ('flavors')
+let optionElement = document.getElementById ('product-cards')
+
+let template = ''
+option.forEach(op => {template += `
 
 
 
 
-function drawToppings()
 
-function drawVessels()
 
+
+
+
+
+
+
+`
+optionElem.innerHTML = template
+
+}
 
 function drawCone()
 
