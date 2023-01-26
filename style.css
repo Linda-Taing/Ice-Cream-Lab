@@ -1,0 +1,19 @@
+body{
+    display: flex;  
+/* //when removed will make this a 3 column webpage. */
+    flex-direction:column; 
+    height: 100vh;
+}
+.checkout{
+    min-height: calc(100vh-100);
+}
+.img{
+    height:20vh;
+    width:100%
+}
+
+.header-font{
+    font-family: 'Source Code Pro', monospace;
+    color:rgb(239, 118, 189)
+}
+
