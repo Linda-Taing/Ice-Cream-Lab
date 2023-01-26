@@ -67,15 +67,18 @@ console.log('drawShop')
 function drawCart(){
 
 let cartElem = document.getElementById('cart')
+let cartTotalElem = document.getElementById('cart-total')
+let template=''
 
     cart.forEach(item => {
     template += `
-    <div>${item.name} - ${item.quantity}
+    <div>(${item.name} - ${item.quantity})
     <button onclick="removeItem('${item.name}')"
-    class= "btn btn-danger"> <iclass ="mdi mdi-delete"</i> </button><d/iv>`
+    class= "btn btn-danger"> <i class ="mdi mdi-delete"</i> </button></div>`
 })
-
-
+let total = calculateCartTotal()
+cartElem.innerHTML = template
+cartElem.innerText = total.toFixed(2)
 
 }
 function addItemToCart(name){
@@ -96,6 +99,8 @@ if(flavorsFoundInCart){
     drawCart()
 }
 
+
+
 function calculateCartTotal() {
 
 let total = 0
@@ -113,7 +118,7 @@ function checkout() {
 
 function removeItem(name){
 
-    let index = cart.findndex(p => p.name == name)
+    let index = cart.findIndex(p => p.name == name)
     cart.splice(index, 1)
     drawCart()
 

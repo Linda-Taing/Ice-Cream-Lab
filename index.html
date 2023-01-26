@@ -81,9 +81,16 @@
                             <div class="text-center text-light">
                                 🤤HURRY UP! Get in my BELLY!!🤤
                                 <h3 class=" p-3"><b>CHECKOUT</b></h3>
-                                <div>${item.name} - ${item.quantity}
-                                    <button onclick="removeItem('${item.name}')" class="btn btn-danger"> <i
-                                            class="mdi mdi-delete-forever"></i> </button>
+                                <div class="row">
+                                    <div class="col-12">
+                                        `
+                                        <button onclick="removeItem('${item.name}')" class="btn btn-danger"> <i
+                                                class="mdi mdi-delete"></i> </button>
+                                    </div>`
+                                    <div class="display-6">TOTAL: $<span id="cart-total"></span></div>
+                                    <div>
+                                        <button class="btn btn-warning" onclick="checkout()">CHECKOUT</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -92,17 +99,12 @@
             </div>
         </div>
         </div>
+        </div>
     </main>
     <footer class="d-flex align-content-center justify-content-center p-3 title">
         <marquee>🦄🍦Thank You Come Again🍦🦄</marquee>
-
     </footer>
-
-
-
-
-
-    <script src="apps.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
