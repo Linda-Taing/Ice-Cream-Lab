@@ -40,7 +40,7 @@ function drawShop(){
     let template = ''
 
     shop.forEach(product => {
-        template += `
+        template +=  `
         <div class="col-md-6 col-lg-4 my-3">
         <div class="card product-card">
             <img src="${product.image}"alt"${product.name}"
@@ -52,7 +52,7 @@ function drawShop(){
                 </div>
                 <div class="d-flex justify-content-center">
                     <button class="btn btn-secondary " title="Add item to cone!"
-                        onclick="addItemToCart(${product.name})">
+                        onclick="addItemToCart('${product.name}')">
                         <i class="mdi mdi-cart "></i>ADD</button>
                 </div>
             </div>
@@ -83,7 +83,8 @@ let template=''
 })
 let total = calculateCartTotal()
 cartElem.innerHTML = template
-cartElem.innerText = total.toFixed(2)
+debugger
+cartTotalElem.innerText = total.toFixed(2)
 
 }
 function addItemToCart(name){
@@ -110,7 +111,7 @@ function calculateCartTotal() {
 
 let total = 0
 cart.forEach(p => {
-total += p.price + p.quantity
+total += p.price * p.quantity
 })
 
 return total
